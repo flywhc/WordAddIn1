@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAddIn1", "WordAddIn1\WordAddIn1.csproj", "{B5995037-615B-4F28-886A-016B382DC01B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WordVSTOSetup", "WordVSTOSetup\WordVSTOSetup.vdproj", "{AEF30CF9-6846-4B11-ABF1-B0DC6295699B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5995037-615B-4F28-886A-016B382DC01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5995037-615B-4F28-886A-016B382DC01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5995037-615B-4F28-886A-016B382DC01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5995037-615B-4F28-886A-016B382DC01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF30CF9-6846-4B11-ABF1-B0DC6295699B}.Debug|Any CPU.ActiveCfg = Debug
+		{AEF30CF9-6846-4B11-ABF1-B0DC6295699B}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B051A87-9E8A-4E61-BEF5-7F8F4F9C0BAF}
+	EndGlobalSection
+EndGlobal
