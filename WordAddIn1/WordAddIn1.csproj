@@ -211,7 +211,7 @@
     <ManifestCertificateThumbprint>5DFA126E964AC00D9C9407EBDEB8F2DEC345063D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>WordAddIn1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
