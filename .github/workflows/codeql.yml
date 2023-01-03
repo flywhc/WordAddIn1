@@ -66,6 +66,7 @@ jobs:
         $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]"ReadWrite")
         $store.Add($cert)
         $store.Close()
+        echo "imported pfx"
     
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
