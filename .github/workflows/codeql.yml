@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: windows-latest
+    runs-on: windows-2022
     permissions:
       actions: read
       contents: read
@@ -84,8 +84,8 @@ jobs:
     
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+    #- name: Autobuild
+    #  uses: github/codeql-action/autobuild@v2
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -96,6 +96,18 @@ jobs:
     # - run: |
     #   echo "Run, Build Application using script"
     #   ./location_of_script_within_repo/buildscript.sh
+    - name: Dump GitHub context
+      run: echo '${{github.workspace}}'
+    - name: Dump GitHub codql
+      run: type "C:\hostedtoolcache\windows\CodeQL\0.0.0-20221211\x64\codeql\csharp\tools\autobuild.cmd"
+        
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1.1.3
+
+    - name: Set VS.net environment
+      run: cmd.exe /C CALL "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars32.bat"
+    - name: Build app for CodeQL
+      run: msbuild ${{github.workspace}}\WordAddIn1.sln -t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /nologo /nr:false /p:VisualStudioVersion="17.0" /p:_MSDeployUserAgent="VSTS_6d40a9fc-bf0f-4525-9a08-d6b1f10a71fa_build_3_0"
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
