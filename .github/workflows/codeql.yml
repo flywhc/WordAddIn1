@@ -98,6 +98,8 @@ jobs:
     #   ./location_of_script_within_repo/buildscript.sh
     - name: Dump GitHub context
       run: echo '${{github.workspace}}'
+    - name: Dump GitHub codql
+      run: type "C:\hostedtoolcache\windows\CodeQL\0.0.0-20221211\x64\codeql\csharp\tools\autobuild.cmd"
         
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1.1.3
