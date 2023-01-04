@@ -76,9 +76,9 @@ jobs:
         Sleep 3
         $WshShell = New-Object -ComObject WScript.Shell
         Sleep 3
-        $WshShell.sendkeys("`"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe`" -i D:\a\WordAddIn1\WordAddIn1\WordAddIn1\WordAddIn1_TemporaryKey.pfx VS_KEY_3454C6A8079E9841{Enter}");
+        $WshShell.sendkeys("`"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe`" -i D:\a\WordAddIn1\WordAddIn1\WordAddIn1\WordAddIn1_1_TemporaryKey.pfx VS_KEY_F5FC8C3518593343{Enter}");
         Sleep 3;
-        $WshShell.sendkeys("{Enter}");
+        $WshShell.sendkeys("Lilly123{Enter}");
         Sleep 3;
         $WshShell.sendkeys("{Enter}");
     
