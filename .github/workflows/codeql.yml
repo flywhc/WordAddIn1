@@ -58,29 +58,8 @@ jobs:
     - name: Import certificate from the command-line
       shell: pwsh
       run: |
-        $pfxpath = 'D:\a\WordAddIn1\WordAddIn1\WordAddIn1\WordAddIn1_TemporaryKey.pfx'
-        $password = ''
-        Add-Type -AssemblyName System.Security
-        $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($pfxpath, $null, [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]"PersistKeySet")
-        $store = new-object system.security.cryptography.X509Certificates.X509Store -argumentlist "MY", CurrentUser
-        $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]"ReadWrite")
-        $store.Add($cert)
-        $store.Close()
-        echo "imported pfx"
-        #[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-        #Start-Process "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe" -ArgumentList "-i D:\a\WordAddIn1\WordAddIn1\WordAddIn1\WordAddIn1_TemporaryKey.pfx VS_KEY_3454C6A8079E9841" -NoNewWindow -Wait
-        #[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-        #Start-Sleep 2
-        #[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-        Start-Process cmd.exe 
-        Sleep 3
-        $WshShell = New-Object -ComObject WScript.Shell
-        Sleep 3
-        $WshShell.sendkeys("`"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe`" -i D:\a\WordAddIn1\WordAddIn1\WordAddIn1\WordAddIn1_1_TemporaryKey.pfx VS_KEY_F5FC8C3518593343{Enter}");
-        Sleep 3;
-        $WshShell.sendkeys("Lilly123{Enter}");
-        Sleep 3;
-        $WshShell.sendkeys("{Enter}");
+        $Secure_String_Pwd = ConvertTo-SecureString "Lilly123" -AsPlainText -Force
+        Import-PfxCertificate -FilePath '${{github.workspace}}\WordAddIn1\WordAddIn1_1_TemporaryKey.pfx' -CertStoreLocation Cert:\CurrentUser\My -Password $Secure_String_Pwd
     
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
