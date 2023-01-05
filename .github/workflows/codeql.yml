@@ -86,7 +86,7 @@ jobs:
     - name: Set VS.net environment
       run: cmd.exe /C CALL "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars32.bat"
     - name: Build app for CodeQL
-      run: msbuild ${{github.workspace}}\WordAddIn1.sln -t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /nologo /nr:false /p:VisualStudioVersion="17.0" /p:_MSDeployUserAgent="VSTS_6d40a9fc-bf0f-4525-9a08-d6b1f10a71fa_build_3_0"
+      run: msbuild ${{github.workspace}}\WordAddIn1.sln -t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /nologo /nr:false /p:VisualStudioVersion="17.0"
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
