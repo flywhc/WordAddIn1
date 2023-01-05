@@ -88,7 +88,7 @@ jobs:
     - name: Build app for CodeQL
       run: msbuild ${{github.workspace}}\WordAddIn1.sln -t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /nologo /nr:false /p:VisualStudioVersion="17.0"
     - name: Build installer
-      run: devenv.com ${{github.workspace}}\WordVSTOSetup\WordVSTOSetup.vdproj /build "Debug"
+      run: &"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.com" ${{github.workspace}}\WordVSTOSetup\WordVSTOSetup.vdproj /build "Debug"
     
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
